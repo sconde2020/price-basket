@@ -3,10 +3,7 @@ package services;
 import models.Basket;
 import models.Item;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class BasketService implements IBasketService {
     private final IDiscountService discountService;
@@ -43,7 +40,7 @@ public class BasketService implements IBasketService {
         // Stream through all items in the basket
         return basket.getItemList().stream()
                 // Extract the price of each item
-                .map(Item::getPrice)
+                .map(Item::price)
                 // Sum all the prices together
                 .reduce(Double::sum)
                 // If no items are present, return 0.0 as the default
@@ -62,7 +59,7 @@ public class BasketService implements IBasketService {
 
             // If the discount is £1 or more, format it with pound symbol
             if (itemDiscount >= 100.0) {
-                offerList.add(name + " " + offer + "% off:-£" + itemDiscount / 100);
+                offerList.add(name + " " + offer + "% off:-£" + String.format(Locale.US,"%.2f", itemDiscount / 100.0));
             }
             // If there's a non-zero discount less than £1, format it in pence
             else if (itemDiscount != 0) {

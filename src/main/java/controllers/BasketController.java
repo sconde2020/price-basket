@@ -4,6 +4,8 @@ package controllers;
 import models.Basket;
 import services.IBasketService;
 
+import java.util.Locale;
+
 public class BasketController implements IBasketController {
 
     private final IBasketService basketService ;
@@ -34,12 +36,12 @@ public class BasketController implements IBasketController {
         basketService.getOffers(basket).forEach(System.out::println);
 
         // Display total price in pounds or pennies
-        displayAmountInPoundsOrPennies(total, "Total");
+        displayAmountInPoundsOrPennies(total, "Total price");
     }
 
     private void displayAmountInPoundsOrPennies(double amountInPounds, String name) {
         if (amountInPounds >= 1) {
-            System.out.printf("%s: £%.2f%n", name, amountInPounds);
+            System.out.printf(Locale.US, "%s: £%.2f%n", name, amountInPounds);
         }
         else {
             System.out.printf("%s: %dp%n", name, (int)(amountInPounds * 100));

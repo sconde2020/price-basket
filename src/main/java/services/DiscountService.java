@@ -13,7 +13,7 @@ public record DiscountService(Map<String, Double> priceMap, Map<String, Integer>
 
         // General discount (discount = quantity * offer * price)
         if (itemName.equals("Apples")) {
-            long quantity = itemList.stream().filter(item -> item.getName().equals(itemName)).count();
+            long quantity = itemList.stream().filter(item -> item.name().equals(itemName)).count();
             return (this.priceMap.get(itemName) * quantity * this.offerMap.get(itemName));
         }
 
@@ -27,10 +27,10 @@ public record DiscountService(Map<String, Double> priceMap, Map<String, Integer>
 
     public double getBreadDiscountInPennies(List<Item> itemList) {
         // Count the number of "Soup" items in the basket
-        long soupQuantity = itemList.stream().filter(item -> item.getName().equals("Soup")).count();
+        long soupQuantity = itemList.stream().filter(item -> item.name().equals("Soup")).count();
 
         // Count the number of "Bread" items in the basket
-        long breadQuantity = itemList.stream().filter(item -> item.getName().equals("Bread")).count();
+        long breadQuantity = itemList.stream().filter(item -> item.name().equals("Bread")).count();
 
         // For every 2 soups, one bread gets a discount
         long discountedBreads = Math.min(soupQuantity / 2, breadQuantity);
