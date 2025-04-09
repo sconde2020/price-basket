@@ -1,5 +1,10 @@
-import basket.BasketHelper;
-import basket.IBasket;
+import controllers.BasketController;
+import controllers.IBasketController;
+import models.Basket;
+import services.BasketService;
+import services.DiscountService;
+import services.IBasketService;
+import services.IDiscountService;
 
 import static constants.DiscountConstants.OFFER_MAP;
 import static constants.PriceConstants.PRICE_MAP;
@@ -8,19 +13,28 @@ public class PriceBasket {
 
     public static void main(String[] args) {
 
-        BasketHelper basketHelper = new BasketHelper(PRICE_MAP, OFFER_MAP);
+        /* Create services and controller instances */
+        IDiscountService discountService = new DiscountService(PRICE_MAP, OFFER_MAP);
 
-        if (basketHelper.areValidItems(args)) {
+        IBasketService basketService = new BasketService(discountService);
 
-            IBasket basket = basketHelper.createBasket();
+        IBasketController basketController = new BasketController(basketService);
 
-            basketHelper.addItemsToBasket(args, basket);
+        // Validate items passed by user as inputs
+        if (basketController.areValidItems(args)) {
 
-            basketHelper.displayBasketPrice(basket);
+            // Create new basket
+            Basket basket = new Basket();
+
+            // Add passed items in basket
+            basketController.addItemsToBasket(args, basket);
+
+            // Display Outputs
+            basketController.displayBasketPrice(basket);
         }
         else {
-            System.err.println("Invalid basket.Basket, verify the goods." +
-                    "\nThe program exists!");
+            // Print a message if items are not existing products
+            System.err.println("Invalid models.Basket, verify the goods.\nThe program exists!");
         }
     }
 
