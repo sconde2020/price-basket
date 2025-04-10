@@ -1,13 +1,15 @@
-import controllers.BasketController;
-import controllers.IBasketController;
-import models.Basket;
-import services.BasketService;
-import services.DiscountService;
-import services.IBasketService;
-import services.IDiscountService;
+package com.pricebasket;
 
-import static constants.DiscountConstants.OFFER_MAP;
-import static constants.PriceConstants.PRICE_MAP;
+import com.pricebasket.controllers.BasketController;
+import com.pricebasket.controllers.IBasketController;
+import com.pricebasket.models.Basket;
+import com.pricebasket.services.BasketService;
+import com.pricebasket.services.DiscountService;
+import com.pricebasket.services.IBasketService;
+import com.pricebasket.services.IDiscountService;
+
+import static com.pricebasket.constants.DiscountConstants.OFFER_MAP;
+import static com.pricebasket.constants.PriceConstants.PRICE_MAP;
 
 public class PriceBasket {
 

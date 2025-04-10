@@ -1,6 +1,6 @@
-package services;
+package com.pricebasket.services;
 
-import models.Basket;
+import com.pricebasket.models.Basket;
 
 import java.util.List;
 

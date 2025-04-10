@@ -1,4 +1,4 @@
-package constants;
+package com.pricebasket.constants;
 
 import java.util.Map;
 

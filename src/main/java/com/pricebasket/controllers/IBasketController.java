@@ -1,6 +1,6 @@
-package controllers;
+package com.pricebasket.controllers;
 
-import models.Basket;
+import com.pricebasket.models.Basket;
 
 public interface IBasketController {
 

@@ -27,7 +27,9 @@ mvn clean install
 
 ### Running Application
 
-java -jar price-basket.jar Apples Milk Bread
+mvn exec:java -Dexec.mainClass=com.pricebasket.PriceBasket -Dexec.args="Milk"
+
+java -jar target/price-basket-1.0-SNAPSHOT.jar Apples Milk Bread
 
 ### Running Tests
 

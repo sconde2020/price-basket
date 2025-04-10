@@ -1,9 +1,10 @@
-import controllers.BasketController;
-import controllers.IBasketController;
+package com.pricebasket;
+
+import com.pricebasket.controllers.IBasketController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import models.Basket;
+import com.pricebasket.models.Basket;
 
 import static org.mockito.Mockito.*;
 

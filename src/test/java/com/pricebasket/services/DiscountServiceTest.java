@@ -1,6 +1,6 @@
-package services;
+package com.pricebasket.services;
 
-import models.Item;
+import com.pricebasket.models.Item;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

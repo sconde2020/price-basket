@@ -1,9 +1,9 @@
-package controllers;
+package com.pricebasket.controllers;
 
-import models.Basket;
+import com.pricebasket.models.Basket;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import services.IBasketService;
+import com.pricebasket.services.IBasketService;
 
 import java.util.List;
 

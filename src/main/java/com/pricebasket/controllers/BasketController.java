@@ -1,8 +1,8 @@
-package controllers;
+package com.pricebasket.controllers;
 
 
-import models.Basket;
-import services.IBasketService;
+import com.pricebasket.models.Basket;
+import com.pricebasket.services.IBasketService;
 
 import java.util.Locale;
 

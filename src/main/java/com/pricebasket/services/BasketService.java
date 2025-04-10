@@ -1,7 +1,7 @@
-package services;
+package com.pricebasket.services;
 
-import models.Basket;
-import models.Item;
+import com.pricebasket.models.Basket;
+import com.pricebasket.models.Item;
 
 import java.util.*;
 
